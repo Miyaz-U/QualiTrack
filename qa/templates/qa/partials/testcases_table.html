@@ -1,0 +1,15 @@
+{% if testcases %}
+<table>
+    <tr><th>ID</th><th>Title</th><th>Description</th><th>Created By</th></tr>
+    {% for tc in testcases %}
+    <tr>
+        <td>TC-{{ tc.id }}</td>
+        <td>{{ tc.title }}</td>
+        <td>{{ tc.description }}</td>
+        <td>{{ tc.created_by }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<p>No test cases found.</p>
+{% endif %}

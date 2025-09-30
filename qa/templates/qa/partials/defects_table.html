@@ -1,0 +1,16 @@
+{% if defects %}
+<table>
+    <tr><th>Test Case ID</th><th>Description</th><th>Status</th><th>Assigned To</th><th>Opened By</th></tr>
+    {% for defect in defects %}
+    <tr>
+        <td>{% if defect.test_case %}TC-{{ defect.test_case.id }}{% endif %}</td>
+        <td>{{ defect.description }}</td>
+        <td>{{ defect.status }}</td>
+        <td>{{ defect.assigned_to }}</td>
+        <td>{{ defect.reported_by }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<p>No defects found.</p>
+{% endif %}

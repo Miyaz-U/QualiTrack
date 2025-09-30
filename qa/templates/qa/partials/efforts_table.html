@@ -1,0 +1,15 @@
+{% if efforts %}
+<table>
+    <tr><th>User Story</th><th>User</th><th>Effort Type</th><th>Hours</th></tr>
+    {% for e in efforts %}
+    <tr>
+        <td>{{ e.user_story.title }}</td>
+        <td>{{ e.user }}</td>
+        <td>{{ e.effort_type }}</td>
+        <td>{{ e.hours }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<p>No efforts found.</p>
+{% endif %}

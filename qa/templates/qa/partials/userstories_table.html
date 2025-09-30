@@ -1,0 +1,15 @@
+{% if userstories %}
+<table>
+    <tr><th>Sprint</th><th>Title</th><th>Description</th><th>Status</th></tr>
+    {% for story in userstories %}
+    <tr>
+        <td>{{ story.sprint.name }}</td>
+        <td>{{ story.title }}</td>
+        <td>{{ story.description }}</td>
+        <td>{{ story.status }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<p>No stories found.</p>
+{% endif %}
